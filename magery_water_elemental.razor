@@ -1,0 +1,12 @@
+while skill 'Magery' != 100
+    if mana < maxmana
+        skill 'Meditation'
+        wait 30000
+    elseif followers = 0
+        cast 'Water Elemental'
+        pause 6000
+    else
+        say 'a water elemental release'
+        pause 2000
+    endif
+endwhile
