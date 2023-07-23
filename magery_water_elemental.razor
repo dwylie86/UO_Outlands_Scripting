@@ -1,10 +1,18 @@
+# Runs while Magery is less than 100
 while skill 'Magery' != 100
-    if mana < maxmana
+    # Looks for Spider's Silk, Bloddmosss, and Mandrake Root first
+    if not findtype '3981' 'backpack' or not findtype '3963' 'backpack' or not findtype '3974' 'backpack'
+        overhead "Out of mats :("
+        stop
+    # Then checks for mana and meditates for 30 seconds
+    elseif mana < maxmana
         skill 'Meditation'
         wait 30000
+    # Then Checks if a water elemental exists
     elseif followers = 0
         cast 'Water Elemental'
         pause 6000
+    # This block releases the elemental 
     else
         say 'a water elemental release'
         pause 2000
